@@ -10,12 +10,15 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+ const BackgroundImage = styled.div`
+    background: red;
+    background-image: url(${db.bg});
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+ `;
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -33,7 +36,7 @@ export default function Home() {
   const [name, setName] = React.useState('');
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <BackgroundImage>
       <Head>
         <title>AluraQuiz - Modelo Base</title>
       </Head>
@@ -66,6 +69,6 @@ export default function Home() {
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/omariosouto" />
-    </QuizBackground>
+    </BackgroundImage>
   );
 }
